@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe - Markus Maga</title>
+
+    <link href="libs/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style type="text/css">
+		.ttt-cell {
+			height: 100%;
+			border: 1px solid #CDCDCD;
+			text-align: center;
+			line-height: 100%;
+			float:left;
+			display:block;
+		}
+		
+		.ttt-board {
+			height: 80%;
+		}
+		
+		.ttt-menu {
+			height: 20%;
+		}
+		
+		html, body, .container, .ttt-container, .ttt-board-wrap {
+			height: 100%;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="container">
+		
+    </div>
+	
+	<!-- JS Scripts here to not block dat loading. -->
+    <script src="libs/jquery-2.1.0.js"></script>
+    <script src="libs/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+	<script src="libs/handlebars-v1.3.0.js"></script>
+	<script src="game.js"></script>
+	
+	<script id="gameboard-template" type="text/x-handlebars-template">
+		<div class="ttt-container" style="display:none;">
+			<h4 class="ttt-winner"></h4>
+			<h4><span class="ttt-player"></span>'s turn!</h4>
+			
+			<div class="row ttt-board">
+				<div class="col-xs-12 ttt-board-wrap">
+					{{#each board}}
+						<div class="ttt-row">
+						{{#each this}}
+							<div class="ttt-cell"></div>
+						{{/each}}
+						</div>
+					{{/each}}
+				</div>
+			</div>
+			
+			<div class="row ttt-menu">
+				<div class="col-xs-6">					
+					<button type="button" class="btn btn-primary ttt-new">New Game</button>
+					Grid size:
+					<select class="ttt-new-grid">
+					  <option>3</option>
+					  <option>4</option>
+					  <option>5</option>
+					  <option>6</option>
+					  <option>7</option>
+					  <option>8</option>
+					  <option>9</option>
+					  <option>10</option>
+					</select>
+					
+					Count to win:
+					<select class="ttt-new-count">
+					  <option>3</option>
+					  <option>4</option>
+					  <option>5</option>
+					  <option>6</option>
+					  <option>7</option>
+					  <option>8</option>
+					  <option>9</option>
+					  <option>10</option>
+					</select>
+				</div>
+				<div class="col-xs-6">
+					<div class="pull-right">
+						<button type="button" class="btn btn-warning ttt-reset">Reset</button>
+						<button type="button" class="btn btn-danger ttt-remove">Remove</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	
+	<script id="player-template" type="text/x-handlebars-template">
+		<span style="color: {{color}};">{{marker}}</span>
+	</script>
+  </body>
+</html>
