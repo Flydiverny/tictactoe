@@ -17,7 +17,7 @@
 		countToWin: 3,
 		count: 0,
 	
-		player: [{marker: "X", color: "#F00" }, {marker: "O", color: "#00F" }, {marker: "H", color: "#0F0"}],
+		player: [{marker: "X", color: "#F00" }, {marker: "O", color: "#00F" }],
 		currentPlayer: -1,
 		
 		// Initial setup of gameboard.
